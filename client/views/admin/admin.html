@@ -1,0 +1,11 @@
+<template name="admin">
+	<div class="container">
+		<div class="row question">
+			{{#each questions}}
+				<div class="col-md-12">
+					<h3>{{que}}</h3><button type="button" id="{{_id}}" class="btn  btn-sm publish {{#if active}}btn-success{{else}}btn-primary{{/if}}">{{#if active}}Active{{else}}publish{{/if}}</button>
+				</div>			
+			{{/each}}
+		</div>
+	</div>
+</template>

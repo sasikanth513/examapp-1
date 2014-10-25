@@ -1,0 +1,27 @@
+Router.configure({
+	layoutTemplate:'ApplicationLayout'
+});
+
+Router.map(function(){
+	this.route("home",{
+		path:'/',
+		onBeforeAction:function(){
+			AccountsEntry.signInRequired(this);
+		}
+	});
+	this.route("create",{
+		path:'/create',
+		onBeforeAction:function(){
+			AccountsEntry.signInRequired(this);
+		}
+	});
+	this.route("admin",{
+		path:'/admin',
+		onBeforeAction:function(){
+			AccountsEntry.signInRequired(this);
+		},
+		waitOn:function(){
+			Meteor.subscribe("AllQuestions");
+		}
+	});
+});

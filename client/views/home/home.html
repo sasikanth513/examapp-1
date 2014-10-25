@@ -1,0 +1,43 @@
+<template name="home">
+	<div class="container">
+		{{#if hasActiveQuestion}}
+			{{#with question}}
+				<div class="row question">
+					<h1>{{que}}</h1>
+				</div>
+				<div class="row options">
+					<div class="radio">
+					  <h3>
+					    <input type="radio" name="optionsRadios" id="optionsRadios1">
+					    <label>{{op1}}</label>
+					  </h3>
+					</div>
+					<div class="radio">
+					  <h3>
+					    <input type="radio" name="optionsRadios" id="optionsRadios2">
+					    <label>{{op2}}</label>
+					  </h3>
+					</div>
+					<div class="radio">
+					  <h3>
+					    <input type="radio" name="optionsRadios" id="optionsRadios3">
+					    <label>{{op3}}</label>
+					  </h3>
+					</div>
+					<div class="radio">
+					  <h3>
+					    <input type="radio" name="optionsRadios" id="optionsRadios4">
+					    <label>{{op4}}</label>
+					  </h3>
+					</div>
+				</div>
+				<ul class="pager">
+					<button type="button" id="{{_id}}" class="btn btn-primary btn-lg next submitAnswer">Submit Answer</button>
+				</ul>
+			{{/with}}
+		{{else}}
+			<h3>Currently There are no active questions</h3>
+		{{/if}}
+		<h3>{{time}}</h3>
+	</div>
+</template>
